@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Loadable from '../loadable';
-import hydtationHTML from '../loadable/hydrationManager';
+import Hydratable from '../loadable/hydratable';
 
-export default Loadable({
+export default Hydratable({
+    tag: 'example',
     id: 'example',
-    loading: () => <example suppressHydrationWarning dangerouslySetInnerHTML={hydtationHTML('example')} />,
-    loader: () => import(/* webpackChunkName: `example` */ './Example.js'),
+    loader: () => import(/* webpackChunkName: `example` */ './Example.js')
 })
 
