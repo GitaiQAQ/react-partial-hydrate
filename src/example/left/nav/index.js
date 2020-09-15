@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Loadable from '../../../loadable';
-
-const EMPTY_HTML = {__html: ''}
+import hydtationHTML from '../../../loadable/hydrationManager';
 
 export default Loadable({
     id: 'left-nav',
-    loading: () => <nav suppressHydrationWarning dangerouslySetInnerHTML={EMPTY_HTML} />,
+    loading: () => <nav suppressHydrationWarning dangerouslySetInnerHTML={hydtationHTML('left-nav')} />,
     loader: () => import('./Nav.js'),
+    render: (mods, props) => {
+        const Nav = mods.default;
+        return <Nav hydratable="left-nav"/>
+    }
 })

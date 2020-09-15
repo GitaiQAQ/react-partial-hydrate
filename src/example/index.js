@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import Loadable from '../loadable';
-
-const EMPTY_HTML = {__html: ''}
+import hydtationHTML from '../loadable/hydrationManager';
 
 export default Loadable({
     id: 'example',
-    loading: () => <example suppressHydrationWarning dangerouslySetInnerHTML={EMPTY_HTML} />,
+    loading: () => <example suppressHydrationWarning dangerouslySetInnerHTML={hydtationHTML('example')} />,
     loader: () => import(/* webpackChunkName: `example` */ './Example.js'),
 })
 

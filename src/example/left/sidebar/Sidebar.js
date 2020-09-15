@@ -4,7 +4,7 @@ import Env from '../../../app/Env';
 export default class Sidebar extends Component {
   render() {
     return (
-      <sidebar>
+      <sidebar {...this.props}>
         <Env/>
       </sidebar>
     );

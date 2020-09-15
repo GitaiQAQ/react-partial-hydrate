@@ -5,7 +5,7 @@ import Sidebar from './sidebar';
 export default class Left extends Component {
   render() {
     return (
-      <left>
+      <left {...this.props}>
         <Nav/>
         <Sidebar/>
       </left>

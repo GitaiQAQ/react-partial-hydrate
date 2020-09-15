@@ -5,7 +5,7 @@ import Nav from './nav';
 export default class Right extends Component {
   render() {
     return (
-      <right>
+      <right {...this.props}>
         <Nav/>
         <Content/>
       </right>

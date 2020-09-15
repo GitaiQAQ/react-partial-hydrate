@@ -4,7 +4,7 @@ import Env from '../../../app/Env';
 export default class Content extends Component {
   render() {
     return (
-      <content>
+      <content {...this.props}>
           <Env/>
       </content>
     );
