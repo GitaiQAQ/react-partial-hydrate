@@ -4,7 +4,6 @@ import React from "react";
 import { renderToString } from "react-dom/server";
 import { App } from "./app";
 import template from "./template";
-import * as md5 from "md5";
 
 const server = express();
 

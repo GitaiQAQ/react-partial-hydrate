@@ -3,6 +3,5 @@ import Hydratable from '../../loadable/hydratable';
 
 export default Hydratable({
     tag: 'left',
-    id: 'left',
     loader: () => import(/* webpackChunkName: `left` */ './Left.js')
 })
