@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Hydratable from '../../loadable/hydratable';
+import Hydratable from '../../../../loadable/hydratable';
 
 export default Hydratable({
-    tag: 'left',
+    tag: 'item',
     loader: () => new Promise((resolve) => {
         setTimeout(() => {
-            import(/* webpackChunkName: `left` */ './Left.js').then(resolve)
+            import(/* webpackChunkName: `nav` */ './Item.js').then(resolve)
         }, 2000);
     })
 })
+
