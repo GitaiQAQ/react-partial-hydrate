@@ -8,12 +8,14 @@ export default function (opts) {
     const id = num++;
     return Loadable({
         ...opts,
-        loading: () => React.createElement(opts.tag, {
-            suppressHydrationWarning: true,
-            dangerouslySetInnerHTML: hydtationHTML(id)
-        }),
+        loading: () => {
+            return React.createElement(opts.tag, {
+                suppressHydrationWarning: true,
+                dangerouslySetInnerHTML: hydtationHTML(id)
+            });
+        },
         render(mods, props) {
-            const DefaultMod = mods.default;
+            const DefaultMod = mods.default || mods;
             return <DefaultMod hydratable={id} {...props}/>
         }
     })
